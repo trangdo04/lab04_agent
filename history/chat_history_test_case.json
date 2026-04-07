@@ -1,0 +1,204 @@
+[
+  {
+    "type": "HumanMessage",
+    "content": "Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Dạ, em có thể giúp anh/chị lên kế hoạch cho chuyến đi Phú Quốc 2 đêm với budget 5 triệu ạ.\n\nĐể em kiểm tra vé máy bay và khách sạn phù hợp nhé!",
+    "additional_kwargs": {
+      "function_call": {
+        "name": "search_flights",
+        "arguments": "{\"origin\": \"H\\u00e0 N\\u1ed9i\", \"destination\": \"Ph\\u00fa Qu\\u1ed1c\"}"
+      }
+    },
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    },
+    "tool_calls": [
+      {
+        "name": "search_flights",
+        "args": {
+          "origin": "Hà Nội",
+          "destination": "Phú Quốc"
+        },
+        "id": "1afafab7-815e-4818-825d-b7374d2d4fe5",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "ToolMessage",
+    "content": "Danh sách chuyến bay từ Hà Nội đến Phú Quốc:\n- VietJet Air (economy): 16:00 -> 18:15 | Giá: 1.100.000đ\n- VietJet Air (economy): 10:00 -> 12:15 | Giá: 1.350.000đ\n- Vietnam Airlines (economy): 07:00 -> 09:15 | Giá: 2.100.000đ\n\nRẻ nhất: VietJet Air (economy) - 16:00 -> 18:15 - 1.100.000đ",
+    "tool_call_id": "1afafab7-815e-4818-825d-b7374d2d4fe5",
+    "name": "search_flights"
+  },
+  {
+    "type": "AIMessage",
+    "content": "",
+    "additional_kwargs": {
+      "function_call": {
+        "name": "search_hotels",
+        "arguments": "{\"city\": \"Ph\\u00fa Qu\\u1ed1c\", \"max_price_per_night\": 1000000}"
+      }
+    },
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    },
+    "tool_calls": [
+      {
+        "name": "search_hotels",
+        "args": {
+          "city": "Phú Quốc",
+          "max_price_per_night": 1000000
+        },
+        "id": "665aeda9-2933-4756-8d96-f944cbcb1c8f",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "ToolMessage",
+    "content": "Khách sạn tại Phú Quốc (lọc theo ngân sách, ưu tiên rating cao):\n- 9Station Hostel (2*): 200.000đ/đêm | Khu vực: Dương Đông | Rating: 4.5\n- Lahana Resort (3*): 800.000đ/đêm | Khu vực: Dương Đông | Rating: 4.0\n\nGợi ý nổi bật: 9Station Hostel - 200.000đ/đêm - Rating 4.5",
+    "tool_call_id": "665aeda9-2933-4756-8d96-f944cbcb1c8f",
+    "name": "search_hotels"
+  },
+  {
+    "type": "AIMessage",
+    "content": "",
+    "additional_kwargs": {
+      "function_call": {
+        "name": "calculate_budget",
+        "arguments": "{\"total_budget\": 5000000, \"expenses\": \"ve_may_bay:1100000,khach_san:400000\"}"
+      }
+    },
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    },
+    "tool_calls": [
+      {
+        "name": "calculate_budget",
+        "args": {
+          "total_budget": 5000000,
+          "expenses": "ve_may_bay:1100000,khach_san:400000"
+        },
+        "id": "e4113055-6c32-4ce2-a1fd-fc54d61087a6",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "ToolMessage",
+    "content": "Bảng chi phí:\n- Ve may bay: 1.100.000đ\n- Khach san: 400.000đ\n---\nTổng chi: 1.500.000đ\nNgân sách: 5.000.000đ\nCòn lại: 3.500.000đ",
+    "tool_call_id": "e4113055-6c32-4ce2-a1fd-fc54d61087a6",
+    "name": "calculate_budget"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Chào bạn, mình đã tìm được thông tin cho chuyến đi Hà Nội - Phú Quốc của bạn như sau:\n\n**Chuyến bay:**\n*   VietJet Air (economy): 16:00 -> 18:15\n*   Giá vé: 1.100.000đ\n\n**Khách sạn:**\n*   9Station Hostel (2*)\n*   Giá: 200.000đ/đêm (Lưu trú 2 đêm: 400.000đ)\n*   Khu vực: Dương Đông\n*   Rating: 4.5\n\n**Tổng chi phí ước tính:**\n*   Tổng chi: 1.500.000đ\n*   Ngân sách: 5.000.000đ\n*   Còn lại: 3.500.000đ\n\nBạn còn dư một khoản kha khá, có thể cân nhắc nâng cấp khách sạn hoặc chi tiêu cho các hoạt động vui chơi, ăn uống tại Phú Quốc nhé!",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "Tìm giúp tôi chuyến bay từ Hà Nội đi Đà Nẵng"
+  },
+  {
+    "type": "AIMessage",
+    "content": "",
+    "additional_kwargs": {
+      "function_call": {
+        "name": "search_flights",
+        "arguments": "{\"destination\": \"\\u0110\\u00e0 N\\u1eb5ng\", \"origin\": \"H\\u00e0 N\\u1ed9i\"}"
+      }
+    },
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    },
+    "tool_calls": [
+      {
+        "name": "search_flights",
+        "args": {
+          "destination": "Đà Nẵng",
+          "origin": "Hà Nội"
+        },
+        "id": "7844a682-b27d-44ff-8eb1-f6452100a7a3",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "ToolMessage",
+    "content": "Danh sách chuyến bay từ Hà Nội đến Đà Nẵng:\n- VietJet Air (economy): 08:30 -> 09:50 | Giá: 890.000đ\n- Bamboo Airways (economy): 11:00 -> 12:20 | Giá: 1.200.000đ\n- Vietnam Airlines (economy): 06:00 -> 07:20 | Giá: 1.450.000đ\n- Vietnam Airlines (business): 14:00 -> 15:20 | Giá: 2.800.000đ\n\nRẻ nhất: VietJet Air (economy) - 08:30 -> 09:50 - 890.000đ",
+    "tool_call_id": "7844a682-b27d-44ff-8eb1-f6452100a7a3",
+    "name": "search_flights"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Chào bạn, mình đã tìm được thông tin chuyến bay từ Hà Nội đi Đà Nẵng như sau:\n\n*   **VietJet Air (economy):** Khởi hành lúc 08:30, đến lúc 09:50. Giá vé: 890.000đ. Đây là lựa chọn rẻ nhất.\n*   **Bamboo Airways (economy):** Khởi hành lúc 11:00, đến lúc 12:20. Giá vé: 1.200.000đ.\n*   **Vietnam Airlines (economy):** Khởi hành lúc 06:00, đến lúc 07:20. Giá vé: 1.450.000đ.\n*   **Vietnam Airlines (business):** Khởi hành lúc 14:00, đến lúc 15:20. Giá vé: 2.800.000đ.\n\nBạn có muốn tìm khách sạn hay thông tin gì khác không?",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "Xin chào! Tôi đang muốn đi du lịch nhưng chưa biết đi đâu."
+  },
+  {
+    "type": "AIMessage",
+    "content": "Chào bạn, để mình có thể tư vấn giúp bạn địa điểm du lịch phù hợp, bạn có thể cho mình biết thêm một chút thông tin không? Ví dụ như:\n\n*   Bạn thích đi biển, núi, hay thành phố?\n*   Bạn có bao nhiêu ngày cho chuyến đi?\n*   Ngân sách dự kiến của bạn là bao nhiêu?\n*   Bạn muốn đi vào thời gian nào?\n\nCàng nhiều thông tin, mình càng dễ dàng đưa ra gợi ý tốt nhất cho bạn!",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "Tôi muốn đặt khách sạn"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Bạn muốn đặt khách sạn ở thành phố nào ạ? Và bạn có yêu cầu nào về mức giá tối đa mỗi đêm không?",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "Giải giúp tôi bài tập lập trình Python về linked list"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Xin lỗi bạn, mình là trợ lý du lịch nên chỉ có thể hỗ trợ các thông tin liên quan đến du lịch, vé máy bay và khách sạn thôi ạ. Mình không thể giúp bạn giải bài tập lập trình.",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  }
+]

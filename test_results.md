@@ -6,16 +6,19 @@
 * **Hành động:** Không gọi tool nào.
 
 > Kết quả test 1: 
-TravelBuddy: Chào bạn! Rất vui được trò chuyện cùng bạn.
+Bạn: Xin chào! Tôi đang muốn đi du lịch nhưng chưa biết đi đâu.
 
-Để mình có thể gợi ý địa điểm du lịch phù hợp, bạn cho mình biết thêm một chút thông tin nhé:
+[AGENT LOG]
+- Không gọi tool, trả lời trực tiếp.
 
-*   **Bạn thích kiểu du lịch nào?** (Ví dụ: biển đảo, núi non, khám phá văn hóa, ẩm thực, nghỉ dưỡng yên tĩnh...)
-*   **Bạn dự định đi vào thời gian nào?** (Ví dụ: cuối tuần này, tháng sau, mùa hè...)
-*   **Ngân sách dự kiến của bạn khoảng bao nhiêu?**
-*   **Bạn đi một mình hay đi cùng ai?** (Gia đình, bạn bè, người yêu...)
+TravelBuddy: Chào bạn, để mình có thể tư vấn giúp bạn địa điểm du lịch phù hợp, bạn có thể cho mình biết thêm một chút thông tin không? Ví dụ như:
 
-Càng nhiều thông tin, mình càng dễ dàng đưa ra những gợi ý hay ho cho bạn đó!
+*   Bạn thích đi biển, núi, hay thành phố?
+*   Bạn có bao nhiêu ngày cho chuyến đi?
+*   Ngân sách dự kiến của bạn là bao nhiêu?
+*   Bạn muốn đi vào thời gian nào?
+
+Càng nhiều thông tin, mình càng dễ dàng đưa ra gợi ý tốt nhất cho bạn!
 ---
 
 ## Test 2 – Single Tool Call
@@ -26,23 +29,19 @@ Càng nhiều thông tin, mình càng dễ dàng đưa ra những gợi ý hay h
 Bạn: Tìm giúp tôi chuyến bay từ Hà Nội đi Đà Nẵng
 
 [AGENT LOG]
-- Không gọi tool, trả lời trực tiếp.
-
-TravelBuddy: Chào bạn, bạn muốn tìm chuyến bay đi Đà Nẵng vào ngày nào ạ?
-
-Bạn: ngày mai
-
-[AGENT LOG]
 - Gọi tool: search_flights({'destination': 'Đà Nẵng', 'origin': 'Hà Nội'})
 
-TravelBuddy: Mình tìm được chuyến bay từ Hà Nội đi Đà Nẵng cho ngày mai như sau:
+[AGENT LOG]
+- Không gọi tool, trả lời trực tiếp.
 
-*   **VietJet Air (economy):** Khởi hành lúc 08:30, đến lúc 09:50. Giá vé: 890.000đ.
+TravelBuddy: Chào bạn, mình đã tìm được thông tin chuyến bay từ Hà Nội đi Đà Nẵng như sau:
+
+*   **VietJet Air (economy):** Khởi hành lúc 08:30, đến lúc 09:50. Giá vé: 890.000đ. Đây là lựa chọn rẻ nhất.
 *   **Bamboo Airways (economy):** Khởi hành lúc 11:00, đến lúc 12:20. Giá vé: 1.200.000đ.
 *   **Vietnam Airlines (economy):** Khởi hành lúc 06:00, đến lúc 07:20. Giá vé: 1.450.000đ.
 *   **Vietnam Airlines (business):** Khởi hành lúc 14:00, đến lúc 15:20. Giá vé: 2.800.000đ.
 
-Chuyến bay rẻ nhất là của VietJet Air với giá 890.000đ. Bạn có muốn đặt vé chuyến này không, hay muốn xem thêm thông tin gì khác?
+Bạn có muốn tìm khách sạn hay thông tin gì khác không?
 ---
 
 ## Test 3 – Multi-Step Tool Chaining
@@ -54,45 +53,38 @@ Chuyến bay rẻ nhất là của VietJet Air với giá 890.000đ. Bạn có m
 * **Kết quả:** Tổng hợp thành gợi ý hoàn chỉnh với bảng chi phí.
 
 > Kết quả test 3
-Bạn: Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp!
-
-[AGENT LOG]
-- Không gọi tool, trả lời trực tiếp.
-
-TravelBuddy: Chào bạn, Phú Quốc 2 đêm với budget 5 triệu mình sẽ hỗ trợ bạn lên kế hoạch nhé!
-
-Để mình kiểm tra vé máy bay khứ hồi từ Hà Nội đi Phú Quốc và khách sạn phù hợp với ngân sách còn lại. Bạn có thể cho mình biết ngày đi cụ thể không?
-
-Bạn: 30/4
+Bạn: Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp
 
 [AGENT LOG]
 - Gọi tool: search_flights({'origin': 'Hà Nội', 'destination': 'Phú Quốc'})
 
-TravelBuddy: Chuyến bay khứ hồi từ Hà Nội đi Phú Quốc ngày 30/4 có một số lựa chọn, rẻ nhất là của VietJet Air với giá 1.100.000đ.
-
-Vậy là mình đã có chi phí vé máy bay. Với tổng ngân sách 5.000.000đ, sau khi trừ vé máy bay, bạn còn lại 3.900.000đ cho 2 đêm khách sạn và các chi phí khác.
-
-Giờ mình tìm khách sạn cho bạn nhé. Bạn muốn ở khu vực nào ở Phú Quốc hay có yêu cầu gì đặc biệt về khách sạn không? Hoặc mình có thể tìm khách sạn với mức giá khoảng 1.000.000đ/đêm để bạn thoải mái chi tiêu cho ăn uống, vui chơi nhé.
-
-Bạn: ở đâu cũng được
-
 [AGENT LOG]
 - Gọi tool: search_hotels({'city': 'Phú Quốc', 'max_price_per_night': 1000000})
 
-TravelBuddy: Mình tìm được một số khách sạn ở Phú Quốc, bạn tham khảo nhé:
+[AGENT LOG]
+- Gọi tool: calculate_budget({'total_budget': 5000000, 'expenses': 've_may_bay:1100000,khach_san:400000'})
 
-*   **9Station Hostel (2 sao):** Giá khoảng 200.000đ/đêm. Khách sạn này ở khu vực Dương Đông và có rating khá cao là 4.5.
-*   **Lahana Resort (3 sao):** Giá khoảng 800.000đ/đêm. Cũng ở khu vực Dương Đông và có rating 4.0.
+[AGENT LOG]
+- Không gọi tool, trả lời trực tiếp.
 
-Với mức giá này, mình nghĩ bạn nên chọn 9Station Hostel để tiết kiệm chi phí, còn dư tiền cho việc ăn uống và vui chơi.
+TravelBuddy: Chào bạn, mình đã tìm được thông tin cho chuyến đi Hà Nội - Phú Quốc của bạn như sau:
 
-Vậy mình chốt phương án này nhé:
-*   Vé máy bay khứ hồi: 1.100.000đ
-*   Khách sạn 9Station Hostel (2 đêm): 200.000đ/đêm x 2 đêm = 400.000đ
+**Chuyến bay:**
+*   VietJet Air (economy): 16:00 -> 18:15
+*   Giá vé: 1.100.000đ
 
-Tổng chi phí dự kiến cho vé máy bay và khách sạn là 1.500.000đ. Với ngân sách 5.000.000đ, bạn còn lại 3.500.000đ để chi tiêu cho ăn uống, đi lại và các hoạt động khác tại Phú Quốc.
+**Khách sạn:**
+*   9Station Hostel (2*)
+*   Giá: 200.000đ/đêm (Lưu trú 2 đêm: 400.000đ)
+*   Khu vực: Dương Đông
+*   Rating: 4.5
 
-Bạn thấy kế hoạch này thế nào?
+**Tổng chi phí ước tính:**
+*   Tổng chi: 1.500.000đ
+*   Ngân sách: 5.000.000đ
+*   Còn lại: 3.500.000đ
+
+Bạn còn dư một khoản kha khá, có thể cân nhắc nâng cấp khách sạn hoặc chi tiêu cho các hoạt động vui chơi, ăn uống tại Phú Quốc nhé!
 ---
 
 ## Test 4 – Missing Info / Clarification
@@ -106,7 +98,7 @@ Bạn: Tôi muốn đặt khách sạn
 [AGENT LOG]
 - Không gọi tool, trả lời trực tiếp.
 
-TravelBuddy: Chào bạn, bạn muốn đặt khách sạn ở thành phố nào ạ? Và bạn có ngân sách dự kiến cho mỗi đêm ở là bao nhiêu, hay có yêu cầu đặc biệt nào không?
+TravelBuddy: Bạn muốn đặt khách sạn ở thành phố nào ạ? Và bạn có yêu cầu nào về mức giá tối đa mỗi đêm không?
 ---
 
 ## Test 5 – Guardrail / Refusal
@@ -119,4 +111,4 @@ Bạn: Giải giúp tôi bài tập lập trình Python về linked list
 [AGENT LOG]
 - Không gọi tool, trả lời trực tiếp.
 
-TravelBuddy: Xin lỗi bạn, mình chỉ có thể hỗ trợ các yêu cầu liên quan đến du lịch, vé máy bay, khách sạn và ngân sách chuyến đi thôi ạ. Bạn có cần mình tư vấn gì về các chủ đề này không?
+TravelBuddy: Xin lỗi bạn, mình là trợ lý du lịch nên chỉ có thể hỗ trợ các thông tin liên quan đến du lịch, vé máy bay và khách sạn thôi ạ. Mình không thể giúp bạn giải bài tập lập trình.
