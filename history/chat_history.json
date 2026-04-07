@@ -1,11 +1,11 @@
 [
   {
     "type": "HumanMessage",
-    "content": "Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp!"
+    "content": "Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp"
   },
   {
     "type": "AIMessage",
-    "content": "Chào bạn, Phú Quốc 2 đêm với budget 5 triệu mình sẽ hỗ trợ bạn lên kế hoạch nhé!\n\nĐể mình kiểm tra vé máy bay khứ hồi từ Hà Nội đi Phú Quốc và khách sạn phù hợp với ngân sách còn lại. Bạn có thể cho mình biết ngày đi cụ thể không?",
+    "content": "Chào bạn, để mình lên kế hoạch chi tiết cho chuyến đi Phú Quốc 2 đêm của bạn nhé!\n\nTrước tiên, mình sẽ tìm vé máy bay từ Hà Nội đi Phú Quốc cho bạn. Bạn có thể cho mình biết ngày đi cụ thể không?",
     "response_metadata": {
       "finish_reason": "STOP",
       "model_name": "gemini-2.5-flash-lite",
@@ -19,7 +19,7 @@
   },
   {
     "type": "AIMessage",
-    "content": "Dạ, mình kiểm tra vé máy bay Hà Nội - Phú Quốc khứ hồi cho dịp 30/4 nhé!",
+    "content": "Ok bạn, mình kiểm tra vé máy bay Hà Nội - Phú Quốc khứ hồi cho ngày 30/4 nhé.",
     "additional_kwargs": {
       "function_call": {
         "name": "search_flights",
@@ -39,7 +39,7 @@
           "origin": "Hà Nội",
           "destination": "Phú Quốc"
         },
-        "id": "fcce14e1-0f84-4019-ab47-4b2c5a9ff9b6",
+        "id": "d6e455cc-1c2b-434c-9802-30214e5eb9c0",
         "type": "tool_call"
       }
     ]
@@ -47,12 +47,12 @@
   {
     "type": "ToolMessage",
     "content": "Danh sách chuyến bay từ Hà Nội đến Phú Quốc:\n- VietJet Air (economy): 16:00 -> 18:15 | Giá: 1.100.000đ\n- VietJet Air (economy): 10:00 -> 12:15 | Giá: 1.350.000đ\n- Vietnam Airlines (economy): 07:00 -> 09:15 | Giá: 2.100.000đ\n\nRẻ nhất: VietJet Air (economy) - 16:00 -> 18:15 - 1.100.000đ",
-    "tool_call_id": "fcce14e1-0f84-4019-ab47-4b2c5a9ff9b6",
+    "tool_call_id": "d6e455cc-1c2b-434c-9802-30214e5eb9c0",
     "name": "search_flights"
   },
   {
     "type": "AIMessage",
-    "content": "Chuyến bay khứ hồi từ Hà Nội đi Phú Quốc ngày 30/4 có một số lựa chọn, rẻ nhất là của VietJet Air với giá 1.100.000đ.\n\nVậy là mình đã có chi phí vé máy bay. Với tổng ngân sách 5.000.000đ, sau khi trừ vé máy bay, bạn còn lại 3.900.000đ cho 2 đêm khách sạn và các chi phí khác.\n\nGiờ mình tìm khách sạn cho bạn nhé. Bạn muốn ở khu vực nào ở Phú Quốc hay có yêu cầu gì đặc biệt về khách sạn không? Hoặc mình có thể tìm khách sạn với mức giá khoảng 1.000.000đ/đêm để bạn thoải mái chi tiêu cho ăn uống, vui chơi nhé.",
+    "content": "Chào bạn, mình tìm được vé máy bay khứ hồi Hà Nội - Phú Quốc với các lựa chọn sau:\n\n*   **VietJet Air (economy):** Khởi hành lúc 16:00, về lúc 18:15. Giá vé là 1.100.000đ. Đây là lựa chọn rẻ nhất.\n*   **VietJet Air (economy):** Khởi hành lúc 10:00, về lúc 12:15. Giá vé là 1.350.000đ.\n*   **Vietnam Airlines (economy):** Khởi hành lúc 07:00, về lúc 09:15. Giá vé là 2.100.000đ.\n\nBạn thấy lựa chọn nào phù hợp? Nếu bạn chọn vé rẻ nhất của VietJet Air (1.100.000đ), thì chi phí còn lại cho khách sạn và các chi tiêu khác là 3.900.000đ.",
     "response_metadata": {
       "finish_reason": "STOP",
       "model_name": "gemini-2.5-flash-lite",
@@ -62,15 +62,29 @@
   },
   {
     "type": "HumanMessage",
-    "content": "ở đâu cũng được"
+    "content": "cái nào rẻ nhất"
   },
   {
     "type": "AIMessage",
-    "content": "Tuyệt vời! Vậy mình sẽ tìm khách sạn ở khu vực trung tâm, thuận tiện đi lại với mức giá khoảng 1.000.000đ/đêm nha.",
+    "content": "Vậy mình chốt vé rẻ nhất của VietJet Air với giá 1.100.000đ nhé.\n\nVới ngân sách còn lại là 3.900.000đ cho 2 đêm, bạn có thể tham khảo các khách sạn sau đây. Bạn có muốn mình tìm khách sạn với mức giá tối đa bao nhiêu một đêm không? Hoặc bạn có yêu cầu gì đặc biệt về khách sạn không (ví dụ: gần biển, có hồ bơi...)?",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "như nào cx dcd"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Ok bạn, vậy mình sẽ tìm khách sạn với mức giá hợp lý nhất trong phần ngân sách còn lại nhé.\n\nVới 3.900.000đ cho 2 đêm, bạn có thể chi khoảng 1.950.000đ/đêm. Mình sẽ tìm khách sạn trong khoảng giá này.",
     "additional_kwargs": {
       "function_call": {
         "name": "search_hotels",
-        "arguments": "{\"city\": \"Ph\\u00fa Qu\\u1ed1c\", \"max_price_per_night\": 1000000}"
+        "arguments": "{\"city\": \"Ph\\u00fa Qu\\u1ed1c\", \"max_price_per_night\": 1950000}"
       }
     },
     "response_metadata": {
@@ -84,22 +98,22 @@
         "name": "search_hotels",
         "args": {
           "city": "Phú Quốc",
-          "max_price_per_night": 1000000
+          "max_price_per_night": 1950000
         },
-        "id": "b0869ab0-9c1e-4621-8881-ae3e29a59eab",
+        "id": "79ef9186-6b72-4a75-95e0-3e70f36eee02",
         "type": "tool_call"
       }
     ]
   },
   {
     "type": "ToolMessage",
-    "content": "Khách sạn tại Phú Quốc (lọc theo ngân sách, ưu tiên rating cao):\n- 9Station Hostel (2*): 200.000đ/đêm | Khu vực: Dương Đông | Rating: 4.5\n- Lahana Resort (3*): 800.000đ/đêm | Khu vực: Dương Đông | Rating: 4.0\n\nGợi ý nổi bật: 9Station Hostel - 200.000đ/đêm - Rating 4.5",
-    "tool_call_id": "b0869ab0-9c1e-4621-8881-ae3e29a59eab",
+    "content": "Khách sạn tại Phú Quốc (lọc theo ngân sách, ưu tiên rating cao):\n- 9Station Hostel (2*): 200.000đ/đêm | Khu vực: Dương Đông | Rating: 4.5\n- Sol by Meliá (4*): 1.500.000đ/đêm | Khu vực: Bãi Trường | Rating: 4.2\n- Lahana Resort (3*): 800.000đ/đêm | Khu vực: Dương Đông | Rating: 4.0\n\nGợi ý nổi bật: 9Station Hostel - 200.000đ/đêm - Rating 4.5",
+    "tool_call_id": "79ef9186-6b72-4a75-95e0-3e70f36eee02",
     "name": "search_hotels"
   },
   {
     "type": "AIMessage",
-    "content": "Mình tìm được một số khách sạn ở Phú Quốc, bạn tham khảo nhé:\n\n*   **9Station Hostel (2 sao):** Giá khoảng 200.000đ/đêm. Khách sạn này ở khu vực Dương Đông và có rating khá cao là 4.5.\n*   **Lahana Resort (3 sao):** Giá khoảng 800.000đ/đêm. Cũng ở khu vực Dương Đông và có rating 4.0.\n\nVới mức giá này, mình nghĩ bạn nên chọn 9Station Hostel để tiết kiệm chi phí, còn dư tiền cho việc ăn uống và vui chơi.\n\nVậy mình chốt phương án này nhé:\n*   Vé máy bay khứ hồi: 1.100.000đ\n*   Khách sạn 9Station Hostel (2 đêm): 200.000đ/đêm x 2 đêm = 400.000đ\n\nTổng chi phí dự kiến cho vé máy bay và khách sạn là 1.500.000đ. Với ngân sách 5.000.000đ, bạn còn lại 3.500.000đ để chi tiêu cho ăn uống, đi lại và các hoạt động khác tại Phú Quốc.\n\nBạn thấy kế hoạch này thế nào?",
+    "content": "Ok bạn, với ngân sách còn lại là 3.900.000đ cho 2 đêm, mình có thể tìm được các khách sạn như sau:\n\n*   **9Station Hostel (2 sao):** Giá 200.000đ/đêm. Nằm ở khu vực Dương Đông, được đánh giá 4.5 sao. Đây là lựa chọn rất tiết kiệm.\n*   **Lahana Resort (3 sao):** Giá 800.000đ/đêm. Nằm ở khu vực Dương Đông, được đánh giá 4.0 sao.\n*   **Sol by Meliá (4 sao):** Giá 1.500.000đ/đêm. Nằm ở khu vực Bãi Trường, được đánh giá 4.2 sao.\n\nBạn thích lựa chọn nào trong số này? Nếu bạn chọn 9Station Hostel với giá 200.000đ/đêm, tổng chi phí cho 2 đêm là 400.000đ.",
     "response_metadata": {
       "finish_reason": "STOP",
       "model_name": "gemini-2.5-flash-lite",

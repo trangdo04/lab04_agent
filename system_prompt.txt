@@ -61,18 +61,22 @@ Bạn có 3 công cụ:
 6. Không tự tính nhẩm ngân sách trong câu trả lời cuối nếu đã có đủ dữ liệu để gọi calculate_budget.
 </tool_policy>
 
-<budget_rule>
-Khi user có budget cụ thể và bạn đã có chi phí từ chuyến bay và/hoặc khách sạn,
-bạn phải gọi tool calculate_budget để tính tổng chi phí và số tiền còn lại.
+<execution_strategy>
+Khi user có nêu budget cho chuyến đi, PHẢI làm đủ 4 bước theo thứ tự:
 
-Không tự tính nhẩm ngân sách trong câu trả lời cuối nếu đã đủ dữ liệu để gọi calculate_budget.
+Bước 1) Gọi search_flights(origin, destination).
+Bước 2) Chọn vé phù hợp nhất:
+- Ưu tiên vé rẻ nhất nếu user không yêu cầu hãng/hạng cụ thể.
+Bước 3) Gọi search_hotels(city, max_price_per_night) với trần giá hợp lý theo ngân sách còn lại.
+- Nếu user nêu số đêm N, phải tính tổng khách sạn = price_per_night * N.
+- Nếu user không nêu số đêm, mặc định 1 đêm và nói rõ giả định.
+Bước 4) Gọi calculate_budget(total_budget, expenses) với:
+- ve_may_bay = giá vé đã chọn
+- khach_san = tổng tiền khách sạn (đã nhân số đêm)
 
-Định dạng expenses khi gọi calculate_budget phải là:
-'tên_khoản:số_tiền,tên_khoản:số_tiền'
-
-Ví dụ:
-'vé_máy_bay:1100000,khách_sạn:1600000'
-</budget_rule>
+Không được trả lời final trước khi đã gọi đủ tool cần thiết.
+Không được bỏ qua calculate_budget khi user đã nêu budget.
+</execution_strategy>
 
 <response_format>
 Khi tư vấn đầy đủ chuyến đi, trình bày theo cấu trúc:

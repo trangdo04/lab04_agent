@@ -53,6 +53,46 @@ Chuyến bay rẻ nhất là của VietJet Air với giá 890.000đ. Bạn có m
     3.  `calculate_budget(5000000, "vé_bay:1100000,khách_sạn:...")` → tính còn lại
 * **Kết quả:** Tổng hợp thành gợi ý hoàn chỉnh với bảng chi phí.
 
+> Kết quả test 3
+Bạn: Tôi ở Hà Nội, muốn đi Phú Quốc 2 đêm, budget 5 triệu. Tư vấn giúp!
+
+[AGENT LOG]
+- Không gọi tool, trả lời trực tiếp.
+
+TravelBuddy: Chào bạn, Phú Quốc 2 đêm với budget 5 triệu mình sẽ hỗ trợ bạn lên kế hoạch nhé!
+
+Để mình kiểm tra vé máy bay khứ hồi từ Hà Nội đi Phú Quốc và khách sạn phù hợp với ngân sách còn lại. Bạn có thể cho mình biết ngày đi cụ thể không?
+
+Bạn: 30/4
+
+[AGENT LOG]
+- Gọi tool: search_flights({'origin': 'Hà Nội', 'destination': 'Phú Quốc'})
+
+TravelBuddy: Chuyến bay khứ hồi từ Hà Nội đi Phú Quốc ngày 30/4 có một số lựa chọn, rẻ nhất là của VietJet Air với giá 1.100.000đ.
+
+Vậy là mình đã có chi phí vé máy bay. Với tổng ngân sách 5.000.000đ, sau khi trừ vé máy bay, bạn còn lại 3.900.000đ cho 2 đêm khách sạn và các chi phí khác.
+
+Giờ mình tìm khách sạn cho bạn nhé. Bạn muốn ở khu vực nào ở Phú Quốc hay có yêu cầu gì đặc biệt về khách sạn không? Hoặc mình có thể tìm khách sạn với mức giá khoảng 1.000.000đ/đêm để bạn thoải mái chi tiêu cho ăn uống, vui chơi nhé.
+
+Bạn: ở đâu cũng được
+
+[AGENT LOG]
+- Gọi tool: search_hotels({'city': 'Phú Quốc', 'max_price_per_night': 1000000})
+
+TravelBuddy: Mình tìm được một số khách sạn ở Phú Quốc, bạn tham khảo nhé:
+
+*   **9Station Hostel (2 sao):** Giá khoảng 200.000đ/đêm. Khách sạn này ở khu vực Dương Đông và có rating khá cao là 4.5.
+*   **Lahana Resort (3 sao):** Giá khoảng 800.000đ/đêm. Cũng ở khu vực Dương Đông và có rating 4.0.
+
+Với mức giá này, mình nghĩ bạn nên chọn 9Station Hostel để tiết kiệm chi phí, còn dư tiền cho việc ăn uống và vui chơi.
+
+Vậy mình chốt phương án này nhé:
+*   Vé máy bay khứ hồi: 1.100.000đ
+*   Khách sạn 9Station Hostel (2 đêm): 200.000đ/đêm x 2 đêm = 400.000đ
+
+Tổng chi phí dự kiến cho vé máy bay và khách sạn là 1.500.000đ. Với ngân sách 5.000.000đ, bạn còn lại 3.500.000đ để chi tiêu cho ăn uống, đi lại và các hoạt động khác tại Phú Quốc.
+
+Bạn thấy kế hoạch này thế nào?
 ---
 
 ## Test 4 – Missing Info / Clarification
