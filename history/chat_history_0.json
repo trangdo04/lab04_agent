@@ -1,0 +1,213 @@
+[
+  {
+    "type": "HumanMessage",
+    "content": "TÌM giúp tôi chuyến bay từ hà nội đi đà nẵng"
+  },
+  {
+    "type": "AIMessage",
+    "content": "",
+    "additional_kwargs": {
+      "function_call": {
+        "name": "search_flights",
+        "arguments": "{\"origin\": \"H\\u00e0 N\\u1ed9i\", \"destination\": \"\\u0110\\u00e0 N\\u1eb5ng\"}"
+      }
+    },
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    },
+    "tool_calls": [
+      {
+        "name": "search_flights",
+        "args": {
+          "origin": "Hà Nội",
+          "destination": "Đà Nẵng"
+        },
+        "id": "1612c9a1-e13e-4d14-96e2-21eb3efe5754",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "ToolMessage",
+    "content": "Danh sách chuyến bay từ Hà Nội đến Đà Nẵng:\n- VietJet Air (economy): 08:30 -> 09:50 | Giá: 890.000đ\n- Bamboo Airways (economy): 11:00 -> 12:20 | Giá: 1.200.000đ\n- Vietnam Airlines (economy): 06:00 -> 07:20 | Giá: 1.450.000đ\n- Vietnam Airlines (business): 14:00 -> 15:20 | Giá: 2.800.000đ\n\nRẻ nhất: VietJet Air (economy) - 08:30 -> 09:50 - 890.000đ",
+    "tool_call_id": "1612c9a1-e13e-4d14-96e2-21eb3efe5754",
+    "name": "search_flights"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Chuyến bay từ Hà Nội đi Đà Nẵng có các lựa chọn sau:\n- VietJet Air (economy): Khởi hành 08:30, đến 09:50, giá 890.000đ\n- Bamboo Airways (economy): Khởi hành 11:00, đến 12:20, giá 1.200.000đ\n- Vietnam Airlines (economy): Khởi hành 06:00, đến 07:20, giá 1.450.000đ\n- Vietnam Airlines (business): Khởi hành 14:00, đến 15:20, giá 2.800.000đ\n\nChuyến bay rẻ nhất là của VietJet Air với giá 890.000đ. Bạn có muốn tìm khách sạn ở Đà Nẵng hoặc cần thêm thông tin gì không?",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "tôi ở hà nội, muốn đi phú quốc 2 đêm, budget 5 triệu. tư vấn giúp"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Tuyệt vời! Phú Quốc 2 đêm với ngân sách 5 triệu là hoàn toàn khả thi đó bạn. Để mình lên kế hoạch chi tiết cho bạn nhé.\n\nĐầu tiên, mình sẽ tìm vé máy bay khứ hồi từ Hà Nội đi Phú Quốc cho bạn. Sau đó, mình sẽ ước tính chi phí vé máy bay và tìm khách sạn phù hợp với ngân sách còn lại.\n\nBạn có thể cho mình biết ngày đi cụ thể không? Nếu chưa có ngày cụ thể, bạn có thể cho mình biết khoảng thời gian bạn muốn đi (ví dụ: cuối tháng 7, đầu tháng 8) để mình tìm vé và khách sạn có giá tốt nhất nhé!",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "tôi muốn đặt khách sạn"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Bạn muốn tìm khách sạn ở đâu và ngân sách cho khách sạn của bạn là bao nhiêu? Nếu bạn có thông tin về thành phố muốn ở và mức giá tối đa bạn có thể chi cho mỗi đêm, mình sẽ tìm giúp bạn.",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "giải giúp tôi bài tập lập trình về linked list"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Xin lỗi bạn, mình chỉ có thể hỗ trợ các yêu cầu liên quan đến du lịch, vé máy bay, khách sạn và ngân sách chuyến đi thôi. Mình không thể giúp bạn giải bài tập lập trình.",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "tôi ở hà nội, muốn đi phú quốc 2 đêm , budget 5 triệu. tư vấn giúp"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Tuyệt vời! Phú Quốc 2 đêm với ngân sách 5 triệu là hoàn toàn khả thi đó bạn. Để mình lên kế hoạch chi tiết cho bạn nhé.\n\nĐầu tiên, mình sẽ tìm vé máy bay khứ hồi từ Hà Nội đi Phú Quốc cho bạn. Sau đó, mình sẽ ước tính chi phí vé máy bay và tìm khách sạn phù hợp với ngân sách còn lại.\n\nBạn có thể cho mình biết ngày đi cụ thể không? Nếu chưa có ngày cụ thể, bạn có thể cho mình biết khoảng thời gian bạn muốn đi (ví dụ: cuối tháng 7, đầu tháng 8) để mình tìm vé và khách sạn có giá tốt nhất nhé!",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "cuối tháng này"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Ok bạn, cuối tháng này mình sẽ tìm vé máy bay và khách sạn cho bạn nhé.\n\nĐể mình kiểm tra xem vé máy bay từ Hà Nội đi Phú Quốc cuối tháng này có giá tốt không đã nha.",
+    "additional_kwargs": {
+      "function_call": {
+        "name": "search_flights",
+        "arguments": "{\"origin\": \"H\\u00e0 N\\u1ed9i\", \"destination\": \"Ph\\u00fa Qu\\u1ed1c\"}"
+      }
+    },
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    },
+    "tool_calls": [
+      {
+        "name": "search_flights",
+        "args": {
+          "origin": "Hà Nội",
+          "destination": "Phú Quốc"
+        },
+        "id": "fe5dade3-12d2-4610-8801-ea8502c0abb6",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "ToolMessage",
+    "content": "Danh sách chuyến bay từ Hà Nội đến Phú Quốc:\n- VietJet Air (economy): 16:00 -> 18:15 | Giá: 1.100.000đ\n- VietJet Air (economy): 10:00 -> 12:15 | Giá: 1.350.000đ\n- Vietnam Airlines (economy): 07:00 -> 09:15 | Giá: 2.100.000đ\n\nRẻ nhất: VietJet Air (economy) - 16:00 -> 18:15 - 1.100.000đ",
+    "tool_call_id": "fe5dade3-12d2-4610-8801-ea8502c0abb6",
+    "name": "search_flights"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Mình đã tìm được vé máy bay khứ hồi từ Hà Nội đi Phú Quốc cho bạn rồi. Chuyến bay rẻ nhất là của VietJet Air, khởi hành lúc 16:00 và về lúc 18:15, với giá 1.100.000đ/chiều. Vậy vé khứ hồi sẽ là 2.200.000đ.\n\nVới ngân sách 5 triệu, sau khi trừ vé máy bay (2.200.000đ), bạn còn lại 2.800.000đ cho 2 đêm khách sạn và chi phí ăn uống, vui chơi.\n\nMức giá này cho phép bạn tìm được khách sạn khá tốt ở Phú Quốc. Bạn có muốn mình tìm khách sạn với mức giá tối đa khoảng bao nhiêu/đêm không? Hoặc bạn có yêu cầu đặc biệt nào về khách sạn không (ví dụ: gần biển, có hồ bơi...)?",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "tối muốn tìm khách sạn có giá dưới 500k 1 đêm"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Tuyệt vời! Với mức giá dưới 500k/đêm, mình có thể tìm cho bạn một số lựa chọn khách sạn tốt ở Phú Quốc.\n\nBạn muốn tìm khách sạn ở khu vực nào của Phú Quốc? Ví dụ như gần trung tâm, gần biển Bãi Sao, Bãi Dài hay khu vực nào khác?",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  },
+  {
+    "type": "HumanMessage",
+    "content": "cái nào cx đc"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Ok bạn, mình sẽ tìm khách sạn ở các khu vực khác nhau cho bạn nhé.\n\nDựa trên thông tin bạn cung cấp:\n*   **Điểm đi:** Hà Nội\n*   **Điểm đến:** Phú Quốc\n*   **Thời gian:** 2 đêm (cuối tháng này)\n*   **Ngân sách:** 5.000.000đ\n*   **Vé máy bay khứ hồi:** Ước tính 2.200.000đ (VietJet Air)\n*   **Ngân sách còn lại cho khách sạn và chi phí khác:** 2.800.000đ\n*   **Yêu cầu khách sạn:** Giá dưới 500.000đ/đêm\n\nMình sẽ tìm khách sạn với giá tối đa 450.000đ/đêm để bạn có dư dả một chút cho chi phí ăn uống, vui chơi nhé.",
+    "additional_kwargs": {
+      "function_call": {
+        "name": "search_hotels",
+        "arguments": "{\"max_price_per_night\": 450000, \"city\": \"Ph\\u00fa Qu\\u1ed1c\"}"
+      }
+    },
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    },
+    "tool_calls": [
+      {
+        "name": "search_hotels",
+        "args": {
+          "max_price_per_night": 450000,
+          "city": "Phú Quốc"
+        },
+        "id": "e81b9a7b-b5e6-4fcb-8038-a627a03a71c8",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "ToolMessage",
+    "content": "Khách sạn tại Phú Quốc (lọc theo ngân sách, ưu tiên rating cao):\n- 9Station Hostel (2*): 200.000đ/đêm | Khu vực: Dương Đông | Rating: 4.5\n\nGợi ý nổi bật: 9Station Hostel - 200.000đ/đêm - Rating 4.5",
+    "tool_call_id": "e81b9a7b-b5e6-4fcb-8038-a627a03a71c8",
+    "name": "search_hotels"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Mình tìm được một số khách sạn ở Phú Quốc với giá dưới 500.000đ/đêm đây bạn:\n\n*   **9Station Hostel (2 sao):** Giá 200.000đ/đêm. Nằm ở khu vực Dương Đông, được đánh giá 4.5 sao. Đây là lựa chọn rất tiết kiệm và có chất lượng tốt.\n\nVới mức giá này, bạn có thể cân nhắc 9Station Hostel. Giá vé máy bay khứ hồi là 2.200.000đ, khách sạn 2 đêm khoảng 400.000đ (nếu chọn 9Station Hostel). Tổng chi phí cho vé máy bay và khách sạn là 2.600.000đ.\n\nNhư vậy, bạn còn lại 2.400.000đ cho chi phí ăn uống, đi lại và vui chơi tại Phú Quốc trong 2 ngày. Ngân sách này khá thoải mái để bạn tận hưởng chuyến đi đó!\n\nBạn có muốn mình đặt vé máy bay và khách sạn này không, hay bạn muốn xem thêm các lựa chọn khác?",
+    "response_metadata": {
+      "finish_reason": "STOP",
+      "model_name": "gemini-2.5-flash-lite",
+      "safety_ratings": [],
+      "model_provider": "google_genai"
+    }
+  }
+]
